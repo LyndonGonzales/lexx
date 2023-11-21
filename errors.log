@@ -1,0 +1,11 @@
+
+C:\Users\lyndong\Desktop\CPP\lexx>ECHO OFF
+
+C:\Users\lyndong\Desktop\CPP\lexx>copy /Y "ch1-06.tab.c" "ch1-06.tab.c.backup"
+        1 file(s) copied.
+
+C:\Users\lyndong\Desktop\CPP\lexx>gcc -c  lex.yy.c ch1-06.tab.c
+
+C:\Users\lyndong\Desktop\CPP\lexx>gcc lex.yy.o ch1-06.tab.o -IC:\Users\lyndong\Desktop\CPP\dev\flex\include -LC:\Users\lyndong\Desktop\CPP\dev\flex\lib -lfl  -o ch1-06.exe
+
+C:\Users\lyndong\Desktop\CPP\lexx>echo OFF

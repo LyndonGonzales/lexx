@@ -1,0 +1,2282 @@
+	.file	"lex.yy.c"
+	.section	.text$getc,"x"
+	.linkonce discard
+	.globl	_getc
+	.def	_getc;	.scl	2;	.type	32;	.endef
+_getc:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	movl	8(%ebp), %eax
+	movl	4(%eax), %eax
+	leal	-1(%eax), %edx
+	movl	8(%ebp), %eax
+	movl	%edx, 4(%eax)
+	movl	8(%ebp), %eax
+	movl	4(%eax), %eax
+	testl	%eax, %eax
+	js	L2
+	movl	8(%ebp), %eax
+	movl	(%eax), %eax
+	leal	1(%eax), %ecx
+	movl	8(%ebp), %edx
+	movl	%ecx, (%edx)
+	movzbl	(%eax), %eax
+	movzbl	%al, %eax
+	jmp	L4
+L2:
+	movl	8(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__filbuf
+L4:
+	leave
+	ret
+	.section	.text$ferror,"x"
+	.linkonce discard
+	.globl	_ferror
+	.def	_ferror;	.scl	2;	.type	32;	.endef
+_ferror:
+	pushl	%ebp
+	movl	%esp, %ebp
+	movl	8(%ebp), %eax
+	movl	12(%eax), %eax
+	andl	$32, %eax
+	popl	%ebp
+	ret
+.lcomm __ZL17yy_current_buffer,4,4
+.lcomm __ZL12yy_hold_char,1,1
+.lcomm __ZL10yy_n_chars,4,4
+	.globl	_yyleng
+	.bss
+	.align 4
+_yyleng:
+	.space 4
+.lcomm __ZL10yy_c_buf_p,4,4
+	.data
+	.align 4
+__ZL7yy_init:
+	.long	1
+.lcomm __ZL8yy_start,4,4
+.lcomm __ZL27yy_did_buffer_switch_on_eof,4,4
+	.globl	_yyin
+	.bss
+	.align 4
+_yyin:
+	.space 4
+	.globl	_yyout
+	.align 4
+_yyout:
+	.space 4
+	.section .rdata,"dr"
+	.align 32
+__ZL9yy_accept:
+	.word	0
+	.word	0
+	.word	0
+	.word	12
+	.word	10
+	.word	1
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	3
+	.word	4
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	9
+	.word	8
+	.word	5
+	.word	6
+	.word	7
+	.word	2
+	.word	0
+	.align 32
+__ZL5yy_ec:
+	.long	0
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	2
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	4
+	.long	5
+	.long	6
+	.long	7
+	.long	8
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	9
+	.long	3
+	.long	3
+	.long	3
+	.long	10
+	.long	11
+	.long	12
+	.long	3
+	.long	13
+	.long	3
+	.long	3
+	.long	14
+	.long	15
+	.long	3
+	.long	3
+	.long	3
+	.long	3
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.long	1
+	.align 32
+__ZL7yy_meta:
+	.long	0
+	.long	1
+	.long	1
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.long	2
+	.align 32
+__ZL7yy_base:
+	.word	0
+	.word	0
+	.word	2
+	.word	30
+	.word	31
+	.word	31
+	.word	0
+	.word	22
+	.word	17
+	.word	16
+	.word	13
+	.word	17
+	.word	0
+	.word	0
+	.word	14
+	.word	9
+	.word	2
+	.word	9
+	.word	0
+	.word	0
+	.word	12
+	.word	10
+	.word	4
+	.word	1
+	.word	2
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	31
+	.word	17
+	.word	3
+	.align 32
+__ZL6yy_def:
+	.word	0
+	.word	31
+	.word	31
+	.word	30
+	.word	30
+	.word	30
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	32
+	.word	0
+	.word	30
+	.word	30
+	.align 32
+__ZL6yy_nxt:
+	.word	0
+	.word	4
+	.word	5
+	.word	4
+	.word	5
+	.word	12
+	.word	7
+	.word	29
+	.word	8
+	.word	18
+	.word	22
+	.word	28
+	.word	9
+	.word	23
+	.word	10
+	.word	19
+	.word	27
+	.word	11
+	.word	6
+	.word	6
+	.word	26
+	.word	25
+	.word	24
+	.word	21
+	.word	20
+	.word	17
+	.word	16
+	.word	15
+	.word	14
+	.word	13
+	.word	30
+	.word	3
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.align 32
+__ZL6yy_chk:
+	.word	0
+	.word	1
+	.word	1
+	.word	2
+	.word	2
+	.word	32
+	.word	2
+	.word	24
+	.word	2
+	.word	13
+	.word	16
+	.word	23
+	.word	2
+	.word	16
+	.word	2
+	.word	13
+	.word	22
+	.word	2
+	.word	31
+	.word	31
+	.word	21
+	.word	20
+	.word	17
+	.word	15
+	.word	14
+	.word	11
+	.word	10
+	.word	9
+	.word	8
+	.word	7
+	.word	3
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+	.word	30
+.lcomm __ZL23yy_last_accepting_state,4,4
+.lcomm __ZL22yy_last_accepting_cpos,4,4
+	.globl	_yytext
+	.bss
+	.align 4
+_yytext:
+	.space 4
+	.globl	_state
+	.align 4
+_state:
+	.space 4
+	.section .rdata,"dr"
+LC0:
+	.ascii "%s: verb\12\0"
+LC1:
+	.ascii "%s: adjective\12\0"
+LC2:
+	.ascii "%s: adverb\12\0"
+LC3:
+	.ascii "%s: noun\12\0"
+LC4:
+	.ascii "%s: preposition\12\0"
+LC5:
+	.ascii "%s: pronoun\12\0"
+LC6:
+	.ascii "%s: conjunction\12\0"
+LC7:
+	.ascii "%s:  don't recognize\12\0"
+	.align 4
+LC8:
+	.ascii "fatal flex scanner internal error--no action found\0"
+	.text
+	.globl	__Z5yylexv
+	.def	__Z5yylexv;	.scl	2;	.type	32;	.endef
+__Z5yylexv:
+	pushl	%ebp
+	movl	%esp, %ebp
+	pushl	%edi
+	pushl	%esi
+	pushl	%ebx
+	subl	$44, %esp
+	movl	__ZL7yy_init, %eax
+	testl	%eax, %eax
+	je	L8
+	movl	$0, __ZL7yy_init
+	movl	__ZL8yy_start, %eax
+	testl	%eax, %eax
+	jne	L9
+	movl	$1, __ZL8yy_start
+L9:
+	movl	_yyin, %eax
+	testl	%eax, %eax
+	jne	L10
+	movl	__imp___iob, %eax
+	movl	%eax, _yyin
+L10:
+	movl	_yyout, %eax
+	testl	%eax, %eax
+	jne	L11
+	movl	__imp___iob, %eax
+	addl	$32, %eax
+	movl	%eax, _yyout
+L11:
+	movl	__ZL17yy_current_buffer, %eax
+	testl	%eax, %eax
+	jne	L12
+	movl	_yyin, %eax
+	movl	$16384, 4(%esp)
+	movl	%eax, (%esp)
+	call	__Z16yy_create_bufferP6_iobufi
+	movl	%eax, __ZL17yy_current_buffer
+L12:
+	call	__Z20yy_load_buffer_statev
+L8:
+	movl	__ZL10yy_c_buf_p, %esi
+	movzbl	__ZL12yy_hold_char, %eax
+	movb	%al, (%esi)
+	movl	%esi, %edi
+	movl	__ZL8yy_start, %ebx
+	movl	__ZL17yy_current_buffer, %eax
+	movl	28(%eax), %eax
+	addl	%eax, %ebx
+L13:
+	movzbl	(%esi), %eax
+	movzbl	%al, %eax
+	movl	__ZL5yy_ec(,%eax,4), %eax
+	movl	%eax, %ecx
+	movzwl	__ZL9yy_accept(%ebx,%ebx), %eax
+	testw	%ax, %ax
+	je	L14
+	movl	%ebx, __ZL23yy_last_accepting_state
+	movl	%esi, __ZL22yy_last_accepting_cpos
+L14:
+	movzwl	__ZL7yy_base(%ebx,%ebx), %eax
+	movswl	%ax, %edx
+	movl	%ecx, %eax
+	movzbl	%al, %eax
+	addl	%edx, %eax
+	movzwl	__ZL6yy_chk(%eax,%eax), %eax
+	cwtl
+	cmpl	%ebx, %eax
+	je	L15
+	movzwl	__ZL6yy_def(%ebx,%ebx), %eax
+	movswl	%ax, %ebx
+	cmpl	$30, %ebx
+	jle	L14
+	movl	%ecx, %eax
+	movzbl	%al, %eax
+	movl	__ZL7yy_meta(,%eax,4), %eax
+	movl	%eax, %ecx
+	jmp	L14
+L15:
+	movzwl	__ZL7yy_base(%ebx,%ebx), %eax
+	movswl	%ax, %edx
+	movl	%ecx, %eax
+	movzbl	%al, %eax
+	addl	%edx, %eax
+	movzwl	__ZL6yy_nxt(%eax,%eax), %eax
+	movswl	%ax, %ebx
+	addl	$1, %esi
+	movzwl	__ZL7yy_base(%ebx,%ebx), %eax
+	cmpw	$31, %ax
+	je	L17
+	jmp	L13
+L17:
+	movzwl	__ZL9yy_accept(%ebx,%ebx), %eax
+	movswl	%ax, %ebx
+	testl	%ebx, %ebx
+	jne	L18
+	movl	__ZL22yy_last_accepting_cpos, %esi
+	movl	__ZL23yy_last_accepting_state, %ebx
+	movzwl	__ZL9yy_accept(%ebx,%ebx), %eax
+	movswl	%ax, %ebx
+L18:
+	movl	%edi, _yytext
+	movl	%esi, %edx
+	movl	%edi, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	movl	%eax, _yyleng
+	movzbl	(%esi), %eax
+	movb	%al, __ZL12yy_hold_char
+	movb	$0, (%esi)
+	movl	%esi, __ZL10yy_c_buf_p
+L19:
+	cmpl	$13, %ebx
+	ja	L20
+	movl	L22(,%ebx,4), %eax
+	jmp	*%eax
+	.section .rdata,"dr"
+	.align 4
+L22:
+	.long	L21
+	.long	L23
+	.long	L24
+	.long	L25
+	.long	L26
+	.long	L27
+	.long	L28
+	.long	L29
+	.long	L30
+	.long	L31
+	.long	L32
+	.long	L33
+	.long	L34
+	.long	L35
+	.text
+L21:
+	movzbl	__ZL12yy_hold_char, %eax
+	movb	%al, (%esi)
+	movl	__ZL22yy_last_accepting_cpos, %esi
+	movl	__ZL23yy_last_accepting_state, %ebx
+	jmp	L17
+L23:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L36
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L36:
+	movl	$0, _state
+	jmp	L37
+L24:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L38
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L38:
+	movl	$1, _state
+	jmp	L37
+L25:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L39
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L39:
+	movl	$2, _state
+	jmp	L37
+L26:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L40
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L40:
+	movl	$3, _state
+	jmp	L37
+L27:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L41
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L41:
+	movl	$4, _state
+	jmp	L37
+L28:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L42
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L42:
+	movl	$5, _state
+	jmp	L37
+L29:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L43
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L43:
+	movl	$6, _state
+	jmp	L37
+L30:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L44
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L44:
+	movl	$7, _state
+	jmp	L37
+L31:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L45
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L45:
+	movl	_state, %eax
+	testl	%eax, %eax
+	je	L46
+	movl	_yytext, %edx
+	movl	_state, %eax
+	movl	%edx, 4(%esp)
+	movl	%eax, (%esp)
+	call	__Z8add_wordiPc
+	jmp	L37
+L46:
+	movl	_yytext, %eax
+	movl	%eax, (%esp)
+	call	__Z11lookup_wordPc
+	cmpl	$7, %eax
+	ja	L48
+	movl	L50(,%eax,4), %eax
+	jmp	*%eax
+	.section .rdata,"dr"
+	.align 4
+L50:
+	.long	L48
+	.long	L49
+	.long	L51
+	.long	L52
+	.long	L53
+	.long	L54
+	.long	L55
+	.long	L56
+	.text
+L49:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC0, (%esp)
+	call	_printf
+	jmp	L47
+L51:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC1, (%esp)
+	call	_printf
+	jmp	L47
+L52:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC2, (%esp)
+	call	_printf
+	jmp	L47
+L53:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC3, (%esp)
+	call	_printf
+	jmp	L47
+L54:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC4, (%esp)
+	call	_printf
+	jmp	L47
+L55:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC5, (%esp)
+	call	_printf
+	jmp	L47
+L56:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC6, (%esp)
+	call	_printf
+	jmp	L47
+L48:
+	movl	_yytext, %eax
+	movl	%eax, 4(%esp)
+	movl	$LC7, (%esp)
+	call	_printf
+	nop
+L47:
+	jmp	L37
+L32:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L70
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+	jmp	L70
+L33:
+	movl	_yyleng, %eax
+	testl	%eax, %eax
+	jle	L58
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yytext, %edx
+	movl	_yyleng, %ecx
+	subl	$1, %ecx
+	addl	%ecx, %edx
+	movzbl	(%edx), %edx
+	cmpb	$10, %dl
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+L58:
+	movl	_yyout, %edx
+	movl	_yyleng, %eax
+	movl	%eax, %ecx
+	movl	_yytext, %eax
+	movl	%edx, 12(%esp)
+	movl	$1, 8(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%eax, (%esp)
+	call	_fwrite
+	jmp	L37
+L35:
+	movl	$0, %eax
+	jmp	L69
+L34:
+	movl	%esi, %edx
+	movl	_yytext, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	subl	$1, %eax
+	movl	%eax, -28(%ebp)
+	movzbl	__ZL12yy_hold_char, %eax
+	movb	%al, (%esi)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	36(%eax), %eax
+	testl	%eax, %eax
+	jne	L60
+	movl	__ZL17yy_current_buffer, %eax
+	movl	16(%eax), %eax
+	movl	%eax, __ZL10yy_n_chars
+	movl	__ZL17yy_current_buffer, %eax
+	movl	_yyin, %edx
+	movl	%edx, (%eax)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	$1, 36(%eax)
+L60:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	__ZL10yy_n_chars, %edx
+	addl	%eax, %edx
+	movl	__ZL10yy_c_buf_p, %eax
+	cmpl	%eax, %edx
+	jb	L61
+	movl	_yytext, %edx
+	movl	-28(%ebp), %eax
+	addl	%edx, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	call	__ZL21yy_get_previous_statev
+	movl	%eax, %ebx
+	movl	%ebx, (%esp)
+	call	__ZL16yy_try_NUL_transi
+	movl	%eax, -32(%ebp)
+	movl	_yytext, %edi
+	cmpl	$0, -32(%ebp)
+	je	L62
+	movl	__ZL10yy_c_buf_p, %eax
+	addl	$1, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	movl	__ZL10yy_c_buf_p, %esi
+	movl	-32(%ebp), %ebx
+	jmp	L13
+L62:
+	movl	__ZL10yy_c_buf_p, %esi
+	jmp	L17
+L61:
+	call	__ZL18yy_get_next_bufferv
+	cmpl	$1, %eax
+	je	L64
+	cmpl	$2, %eax
+	je	L65
+	testl	%eax, %eax
+	je	L66
+	jmp	L37
+L64:
+	movl	$0, __ZL27yy_did_buffer_switch_on_eof
+	call	_yywrap
+	testl	%eax, %eax
+	setne	%al
+	testb	%al, %al
+	je	L67
+	movl	_yytext, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	movl	__ZL8yy_start, %eax
+	subl	$1, %eax
+	movl	%eax, %edx
+	shrl	$31, %edx
+	addl	%edx, %eax
+	sarl	%eax
+	leal	13(%eax), %ebx
+	jmp	L19
+L67:
+	movl	__ZL27yy_did_buffer_switch_on_eof, %eax
+	testl	%eax, %eax
+	jne	L71
+	movl	_yyin, %eax
+	movl	%eax, (%esp)
+	call	__Z9yyrestartP6_iobuf
+	jmp	L71
+L66:
+	movl	_yytext, %edx
+	movl	-28(%ebp), %eax
+	addl	%edx, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	call	__ZL21yy_get_previous_statev
+	movl	%eax, %ebx
+	movl	__ZL10yy_c_buf_p, %esi
+	movl	_yytext, %edi
+	jmp	L13
+L65:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	__ZL10yy_n_chars, %edx
+	addl	%edx, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	call	__ZL21yy_get_previous_statev
+	movl	%eax, %ebx
+	movl	__ZL10yy_c_buf_p, %esi
+	movl	_yytext, %edi
+	jmp	L17
+L71:
+	nop
+	jmp	L37
+L20:
+	movl	$LC8, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+	jmp	L8
+L70:
+	nop
+L37:
+	jmp	L8
+L69:
+	addl	$44, %esp
+	popl	%ebx
+	popl	%esi
+	popl	%edi
+	popl	%ebp
+	ret
+	.section .rdata,"dr"
+	.align 4
+LC9:
+	.ascii "fatal flex scanner internal error--end of buffer missed\0"
+	.align 4
+LC10:
+	.ascii "fatal error - scanner input buffer overflow\0"
+LC11:
+	.ascii "input in flex scanner failed\0"
+	.text
+	.def	__ZL18yy_get_next_bufferv;	.scl	3;	.type	32;	.endef
+__ZL18yy_get_next_bufferv:
+	pushl	%ebp
+	movl	%esp, %ebp
+	pushl	%edi
+	pushl	%esi
+	pushl	%ebx
+	subl	$76, %esp
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	%eax, -60(%ebp)
+	movl	_yytext, %edi
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	__ZL10yy_n_chars, %edx
+	addl	$1, %edx
+	addl	%eax, %edx
+	movl	__ZL10yy_c_buf_p, %eax
+	cmpl	%eax, %edx
+	jnb	L73
+	movl	$LC9, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L73:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	32(%eax), %eax
+	testl	%eax, %eax
+	jne	L74
+	movl	__ZL10yy_c_buf_p, %eax
+	movl	%eax, %edx
+	movl	_yytext, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	cmpl	$1, %eax
+	jne	L75
+	movl	$1, %eax
+	jmp	L76
+L75:
+	movl	$2, %eax
+	jmp	L76
+L74:
+	movl	__ZL10yy_c_buf_p, %eax
+	movl	%eax, %edx
+	movl	_yytext, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	leal	-1(%eax), %ebx
+	movl	$0, %esi
+L78:
+	cmpl	%ebx, %esi
+	jge	L77
+	movl	-60(%ebp), %eax
+	leal	1(%eax), %ecx
+	movl	%ecx, -60(%ebp)
+	movl	%edi, %edx
+	leal	1(%edx), %edi
+	movzbl	(%edx), %edx
+	movb	%dl, (%eax)
+	addl	$1, %esi
+	jmp	L78
+L77:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	36(%eax), %eax
+	cmpl	$2, %eax
+	jne	L79
+	movl	__ZL17yy_current_buffer, %eax
+	movl	$0, __ZL10yy_n_chars
+	movl	__ZL10yy_n_chars, %edx
+	movl	%edx, 16(%eax)
+	jmp	L80
+L79:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	12(%eax), %eax
+	movl	%ebx, %edx
+	subl	%edx, %eax
+	subl	$1, %eax
+	movl	%eax, -32(%ebp)
+L87:
+	cmpl	$0, -32(%ebp)
+	jg	L81
+	movl	__ZL17yy_current_buffer, %eax
+	movl	%eax, -44(%ebp)
+	movl	__ZL10yy_c_buf_p, %eax
+	movl	%eax, %edx
+	movl	-44(%ebp), %eax
+	movl	4(%eax), %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	movl	%eax, -48(%ebp)
+	movl	-44(%ebp), %eax
+	movl	20(%eax), %eax
+	testl	%eax, %eax
+	je	L82
+	movl	-44(%ebp), %eax
+	movl	12(%eax), %eax
+	addl	%eax, %eax
+	movl	%eax, -52(%ebp)
+	cmpl	$0, -52(%ebp)
+	jg	L83
+	movl	-44(%ebp), %eax
+	movl	12(%eax), %edx
+	movl	-44(%ebp), %eax
+	movl	12(%eax), %eax
+	shrl	$3, %eax
+	addl	%eax, %edx
+	movl	-44(%ebp), %eax
+	movl	%edx, 12(%eax)
+	jmp	L84
+L83:
+	movl	-44(%ebp), %eax
+	movl	12(%eax), %eax
+	leal	(%eax,%eax), %edx
+	movl	-44(%ebp), %eax
+	movl	%edx, 12(%eax)
+L84:
+	movl	-44(%ebp), %eax
+	movl	12(%eax), %eax
+	leal	2(%eax), %edx
+	movl	-44(%ebp), %eax
+	movl	4(%eax), %eax
+	movl	%edx, 4(%esp)
+	movl	%eax, (%esp)
+	call	__ZL15yy_flex_reallocPvj
+	movl	%eax, %edx
+	movl	-44(%ebp), %eax
+	movl	%edx, 4(%eax)
+	jmp	L85
+L82:
+	movl	-44(%ebp), %eax
+	movl	$0, 4(%eax)
+L85:
+	movl	-44(%ebp), %eax
+	movl	4(%eax), %eax
+	testl	%eax, %eax
+	jne	L86
+	movl	$LC10, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L86:
+	movl	-44(%ebp), %eax
+	movl	4(%eax), %edx
+	movl	-48(%ebp), %eax
+	addl	%edx, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	movl	__ZL17yy_current_buffer, %eax
+	movl	12(%eax), %eax
+	movl	%ebx, %edx
+	subl	%edx, %eax
+	subl	$1, %eax
+	movl	%eax, -32(%ebp)
+	jmp	L87
+L81:
+	cmpl	$8192, -32(%ebp)
+	jle	L88
+	movl	$8192, -32(%ebp)
+L88:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	24(%eax), %eax
+	testl	%eax, %eax
+	je	L89
+	movl	$42, -36(%ebp)
+	movl	$0, -40(%ebp)
+L93:
+	movl	-40(%ebp), %eax
+	cmpl	-32(%ebp), %eax
+	jge	L90
+	movl	_yyin, %eax
+	movl	%eax, (%esp)
+	call	_getc
+	movl	%eax, -36(%ebp)
+	cmpl	$-1, -36(%ebp)
+	je	L90
+	cmpl	$10, -36(%ebp)
+	je	L90
+	movl	$1, %eax
+	jmp	L91
+L90:
+	movl	$0, %eax
+L91:
+	testb	%al, %al
+	je	L92
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	%ebx, %ecx
+	movl	-40(%ebp), %edx
+	addl	%ecx, %edx
+	addl	%edx, %eax
+	movl	-36(%ebp), %edx
+	movb	%dl, (%eax)
+	addl	$1, -40(%ebp)
+	jmp	L93
+L92:
+	cmpl	$10, -36(%ebp)
+	jne	L94
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %ecx
+	movl	-40(%ebp), %eax
+	leal	1(%eax), %edx
+	movl	%edx, -40(%ebp)
+	movl	%eax, %edx
+	movl	%ebx, %eax
+	addl	%edx, %eax
+	addl	%ecx, %eax
+	movl	-36(%ebp), %edx
+	movb	%dl, (%eax)
+L94:
+	cmpl	$-1, -36(%ebp)
+	jne	L95
+	movl	_yyin, %eax
+	movl	%eax, (%esp)
+	call	_ferror
+	testl	%eax, %eax
+	je	L95
+	movl	$1, %eax
+	jmp	L96
+L95:
+	movl	$0, %eax
+L96:
+	testb	%al, %al
+	je	L97
+	movl	$LC11, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L97:
+	movl	-40(%ebp), %eax
+	movl	%eax, __ZL10yy_n_chars
+	jmp	L98
+L89:
+	movl	_yyin, %edx
+	movl	-32(%ebp), %eax
+	movl	__ZL17yy_current_buffer, %ecx
+	movl	4(%ecx), %ecx
+	movl	%ebx, %esi
+	addl	%esi, %ecx
+	movl	%edx, 12(%esp)
+	movl	%eax, 8(%esp)
+	movl	$1, 4(%esp)
+	movl	%ecx, (%esp)
+	call	_fread
+	movl	%eax, __ZL10yy_n_chars
+	movl	__ZL10yy_n_chars, %eax
+	testl	%eax, %eax
+	jne	L99
+	movl	_yyin, %eax
+	movl	%eax, (%esp)
+	call	_ferror
+	testl	%eax, %eax
+	je	L99
+	movl	$1, %eax
+	jmp	L100
+L99:
+	movl	$0, %eax
+L100:
+	testb	%al, %al
+	je	L98
+	movl	$LC11, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L98:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	__ZL10yy_n_chars, %edx
+	movl	%edx, 16(%eax)
+L80:
+	movl	__ZL10yy_n_chars, %eax
+	testl	%eax, %eax
+	jne	L101
+	testl	%ebx, %ebx
+	jne	L102
+	movl	$1, -28(%ebp)
+	movl	_yyin, %eax
+	movl	%eax, (%esp)
+	call	__Z9yyrestartP6_iobuf
+	jmp	L104
+L102:
+	movl	$2, -28(%ebp)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	$2, 36(%eax)
+	jmp	L104
+L101:
+	movl	$0, -28(%ebp)
+L104:
+	movl	__ZL10yy_n_chars, %eax
+	addl	%ebx, %eax
+	movl	%eax, __ZL10yy_n_chars
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	__ZL10yy_n_chars, %edx
+	addl	%edx, %eax
+	movb	$0, (%eax)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	__ZL10yy_n_chars, %edx
+	addl	$1, %edx
+	addl	%edx, %eax
+	movb	$0, (%eax)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	%eax, _yytext
+	movl	-28(%ebp), %eax
+L76:
+	addl	$76, %esp
+	popl	%ebx
+	popl	%esi
+	popl	%edi
+	popl	%ebp
+	ret
+	.def	__ZL21yy_get_previous_statev;	.scl	3;	.type	32;	.endef
+__ZL21yy_get_previous_statev:
+	pushl	%ebp
+	movl	%esp, %ebp
+	pushl	%esi
+	pushl	%ebx
+	movl	__ZL8yy_start, %ebx
+	movl	__ZL17yy_current_buffer, %eax
+	movl	28(%eax), %eax
+	addl	%eax, %ebx
+	movl	_yytext, %esi
+L112:
+	movl	__ZL10yy_c_buf_p, %eax
+	cmpl	%eax, %esi
+	jnb	L106
+	movzbl	(%esi), %eax
+	testb	%al, %al
+	je	L107
+	movzbl	(%esi), %eax
+	movzbl	%al, %eax
+	movl	__ZL5yy_ec(,%eax,4), %eax
+	jmp	L108
+L107:
+	movl	$1, %eax
+L108:
+	movl	%eax, %ecx
+	movzwl	__ZL9yy_accept(%ebx,%ebx), %eax
+	testw	%ax, %ax
+	je	L109
+	movl	%ebx, __ZL23yy_last_accepting_state
+	movl	%esi, __ZL22yy_last_accepting_cpos
+L109:
+	movzwl	__ZL7yy_base(%ebx,%ebx), %eax
+	movswl	%ax, %edx
+	movl	%ecx, %eax
+	movzbl	%al, %eax
+	addl	%edx, %eax
+	movzwl	__ZL6yy_chk(%eax,%eax), %eax
+	cwtl
+	cmpl	%ebx, %eax
+	je	L110
+	movzwl	__ZL6yy_def(%ebx,%ebx), %eax
+	movswl	%ax, %ebx
+	cmpl	$30, %ebx
+	jle	L109
+	movl	%ecx, %eax
+	movzbl	%al, %eax
+	movl	__ZL7yy_meta(,%eax,4), %eax
+	movl	%eax, %ecx
+	jmp	L109
+L110:
+	movzwl	__ZL7yy_base(%ebx,%ebx), %eax
+	movswl	%ax, %edx
+	movl	%ecx, %eax
+	movzbl	%al, %eax
+	addl	%edx, %eax
+	movzwl	__ZL6yy_nxt(%eax,%eax), %eax
+	movswl	%ax, %ebx
+	addl	$1, %esi
+	jmp	L112
+L106:
+	movl	%ebx, %eax
+	popl	%ebx
+	popl	%esi
+	popl	%ebp
+	ret
+	.def	__ZL16yy_try_NUL_transi;	.scl	3;	.type	32;	.endef
+__ZL16yy_try_NUL_transi:
+	pushl	%ebp
+	movl	%esp, %ebp
+	pushl	%esi
+	pushl	%ebx
+	movl	__ZL10yy_c_buf_p, %esi
+	movl	$1, %ebx
+	movl	8(%ebp), %eax
+	movzwl	__ZL9yy_accept(%eax,%eax), %eax
+	testw	%ax, %ax
+	je	L115
+	movl	8(%ebp), %eax
+	movl	%eax, __ZL23yy_last_accepting_state
+	movl	%esi, __ZL22yy_last_accepting_cpos
+L115:
+	movl	8(%ebp), %eax
+	movzwl	__ZL7yy_base(%eax,%eax), %eax
+	movswl	%ax, %edx
+	movzbl	%bl, %eax
+	addl	%edx, %eax
+	movzwl	__ZL6yy_chk(%eax,%eax), %eax
+	cwtl
+	cmpl	8(%ebp), %eax
+	je	L116
+	movl	8(%ebp), %eax
+	movzwl	__ZL6yy_def(%eax,%eax), %eax
+	cwtl
+	movl	%eax, 8(%ebp)
+	cmpl	$30, 8(%ebp)
+	jle	L115
+	movzbl	%bl, %eax
+	movl	__ZL7yy_meta(,%eax,4), %eax
+	movl	%eax, %ebx
+	jmp	L115
+L116:
+	movl	8(%ebp), %eax
+	movzwl	__ZL7yy_base(%eax,%eax), %eax
+	movswl	%ax, %edx
+	movzbl	%bl, %eax
+	addl	%edx, %eax
+	movzwl	__ZL6yy_nxt(%eax,%eax), %eax
+	cwtl
+	movl	%eax, 8(%ebp)
+	cmpl	$30, 8(%ebp)
+	sete	%al
+	movzbl	%al, %ebx
+	testl	%ebx, %ebx
+	jne	L118
+	movl	8(%ebp), %eax
+	jmp	L120
+L118:
+	movl	$0, %eax
+L120:
+	popl	%ebx
+	popl	%esi
+	popl	%ebp
+	ret
+	.section .rdata,"dr"
+	.align 4
+LC12:
+	.ascii "flex scanner push-back overflow\0"
+	.text
+	.def	__ZL7yyunputiPc;	.scl	3;	.type	32;	.endef
+__ZL7yyunputiPc:
+	pushl	%ebp
+	movl	%esp, %ebp
+	pushl	%edi
+	pushl	%esi
+	pushl	%ebx
+	subl	$28, %esp
+	movl	__ZL10yy_c_buf_p, %ebx
+	movzbl	__ZL12yy_hold_char, %eax
+	movb	%al, (%ebx)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	addl	$2, %eax
+	cmpl	%ebx, %eax
+	jbe	L122
+	movl	__ZL10yy_n_chars, %eax
+	leal	2(%eax), %esi
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %edx
+	movl	__ZL17yy_current_buffer, %eax
+	movl	12(%eax), %eax
+	addl	$2, %eax
+	leal	(%edx,%eax), %edi
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	%esi, %edx
+	leal	(%eax,%edx), %esi
+L124:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	cmpl	%esi, %eax
+	jnb	L123
+	subl	$1, %edi
+	subl	$1, %esi
+	movzbl	(%esi), %eax
+	movb	%al, (%edi)
+	jmp	L124
+L123:
+	movl	%edi, %edx
+	movl	%esi, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	addl	%eax, %ebx
+	movl	%edi, %edx
+	movl	%esi, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	addl	%eax, 12(%ebp)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	__ZL17yy_current_buffer, %edx
+	movl	12(%edx), %edx
+	movl	%edx, __ZL10yy_n_chars
+	movl	__ZL10yy_n_chars, %edx
+	movl	%edx, 16(%eax)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	addl	$2, %eax
+	cmpl	%ebx, %eax
+	jbe	L122
+	movl	$LC12, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L122:
+	subl	$1, %ebx
+	movl	8(%ebp), %eax
+	movb	%al, (%ebx)
+	movl	12(%ebp), %eax
+	movl	%eax, _yytext
+	movzbl	(%ebx), %eax
+	movb	%al, __ZL12yy_hold_char
+	movl	%ebx, __ZL10yy_c_buf_p
+	nop
+	addl	$28, %esp
+	popl	%ebx
+	popl	%esi
+	popl	%edi
+	popl	%ebp
+	ret
+	.def	__ZL7yyinputv;	.scl	3;	.type	32;	.endef
+__ZL7yyinputv:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$40, %esp
+	movl	__ZL10yy_c_buf_p, %eax
+	movzbl	__ZL12yy_hold_char, %edx
+	movb	%dl, (%eax)
+	movl	__ZL10yy_c_buf_p, %eax
+	movzbl	(%eax), %eax
+	testb	%al, %al
+	jne	L127
+	movl	__ZL17yy_current_buffer, %eax
+	movl	4(%eax), %eax
+	movl	__ZL10yy_n_chars, %edx
+	addl	%eax, %edx
+	movl	__ZL10yy_c_buf_p, %eax
+	cmpl	%eax, %edx
+	jbe	L128
+	movl	__ZL10yy_c_buf_p, %eax
+	movb	$0, (%eax)
+	jmp	L127
+L128:
+	movl	__ZL10yy_c_buf_p, %eax
+	movl	%eax, %edx
+	movl	_yytext, %eax
+	subl	%eax, %edx
+	movl	%edx, %eax
+	movl	%eax, -12(%ebp)
+	movl	__ZL10yy_c_buf_p, %eax
+	addl	$1, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	call	__ZL18yy_get_next_bufferv
+	cmpl	$1, %eax
+	je	L130
+	cmpl	$2, %eax
+	je	L131
+	testl	%eax, %eax
+	je	L132
+	jmp	L127
+L131:
+	movl	_yyin, %eax
+	movl	%eax, (%esp)
+	call	__Z9yyrestartP6_iobuf
+L130:
+	call	_yywrap
+	testl	%eax, %eax
+	setne	%al
+	testb	%al, %al
+	je	L133
+	movl	$-1, %eax
+	jmp	L134
+L133:
+	movl	__ZL27yy_did_buffer_switch_on_eof, %eax
+	testl	%eax, %eax
+	jne	L135
+	movl	_yyin, %eax
+	movl	%eax, (%esp)
+	call	__Z9yyrestartP6_iobuf
+L135:
+	call	__ZL7yyinputv
+	jmp	L134
+L132:
+	movl	_yytext, %edx
+	movl	-12(%ebp), %eax
+	addl	%edx, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	nop
+L127:
+	movl	__ZL10yy_c_buf_p, %eax
+	movzbl	(%eax), %eax
+	movzbl	%al, %eax
+	movl	%eax, -16(%ebp)
+	movl	__ZL10yy_c_buf_p, %eax
+	movb	$0, (%eax)
+	movl	__ZL10yy_c_buf_p, %eax
+	addl	$1, %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	movl	__ZL10yy_c_buf_p, %eax
+	movzbl	(%eax), %eax
+	movb	%al, __ZL12yy_hold_char
+	movl	__ZL17yy_current_buffer, %eax
+	cmpl	$10, -16(%ebp)
+	sete	%dl
+	movzbl	%dl, %edx
+	movl	%edx, 28(%eax)
+	movl	-16(%ebp), %eax
+L134:
+	leave
+	ret
+	.globl	__Z9yyrestartP6_iobuf
+	.def	__Z9yyrestartP6_iobuf;	.scl	2;	.type	32;	.endef
+__Z9yyrestartP6_iobuf:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	movl	__ZL17yy_current_buffer, %eax
+	testl	%eax, %eax
+	jne	L137
+	movl	_yyin, %eax
+	movl	$16384, 4(%esp)
+	movl	%eax, (%esp)
+	call	__Z16yy_create_bufferP6_iobufi
+	movl	%eax, __ZL17yy_current_buffer
+L137:
+	movl	__ZL17yy_current_buffer, %eax
+	movl	8(%ebp), %edx
+	movl	%edx, 4(%esp)
+	movl	%eax, (%esp)
+	call	__Z14yy_init_bufferP15yy_buffer_stateP6_iobuf
+	call	__Z20yy_load_buffer_statev
+	nop
+	leave
+	ret
+	.globl	__Z19yy_switch_to_bufferP15yy_buffer_state
+	.def	__Z19yy_switch_to_bufferP15yy_buffer_state;	.scl	2;	.type	32;	.endef
+__Z19yy_switch_to_bufferP15yy_buffer_state:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$8, %esp
+	movl	__ZL17yy_current_buffer, %eax
+	cmpl	8(%ebp), %eax
+	je	L142
+	movl	__ZL17yy_current_buffer, %eax
+	testl	%eax, %eax
+	je	L141
+	movl	__ZL10yy_c_buf_p, %eax
+	movzbl	__ZL12yy_hold_char, %edx
+	movb	%dl, (%eax)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	__ZL10yy_c_buf_p, %edx
+	movl	%edx, 8(%eax)
+	movl	__ZL17yy_current_buffer, %eax
+	movl	__ZL10yy_n_chars, %edx
+	movl	%edx, 16(%eax)
+L141:
+	movl	8(%ebp), %eax
+	movl	%eax, __ZL17yy_current_buffer
+	call	__Z20yy_load_buffer_statev
+	movl	$1, __ZL27yy_did_buffer_switch_on_eof
+	jmp	L138
+L142:
+	nop
+L138:
+	leave
+	ret
+	.globl	__Z20yy_load_buffer_statev
+	.def	__Z20yy_load_buffer_statev;	.scl	2;	.type	32;	.endef
+__Z20yy_load_buffer_statev:
+	pushl	%ebp
+	movl	%esp, %ebp
+	movl	__ZL17yy_current_buffer, %eax
+	movl	16(%eax), %eax
+	movl	%eax, __ZL10yy_n_chars
+	movl	__ZL17yy_current_buffer, %eax
+	movl	8(%eax), %eax
+	movl	%eax, __ZL10yy_c_buf_p
+	movl	__ZL10yy_c_buf_p, %eax
+	movl	%eax, _yytext
+	movl	__ZL17yy_current_buffer, %eax
+	movl	(%eax), %eax
+	movl	%eax, _yyin
+	movl	__ZL10yy_c_buf_p, %eax
+	movzbl	(%eax), %eax
+	movb	%al, __ZL12yy_hold_char
+	nop
+	popl	%ebp
+	ret
+	.section .rdata,"dr"
+	.align 4
+LC13:
+	.ascii "out of dynamic memory in yy_create_buffer()\0"
+	.text
+	.globl	__Z16yy_create_bufferP6_iobufi
+	.def	__Z16yy_create_bufferP6_iobufi;	.scl	2;	.type	32;	.endef
+__Z16yy_create_bufferP6_iobufi:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$40, %esp
+	movl	$40, (%esp)
+	call	__ZL13yy_flex_allocj
+	movl	%eax, -12(%ebp)
+	cmpl	$0, -12(%ebp)
+	jne	L145
+	movl	$LC13, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L145:
+	movl	12(%ebp), %edx
+	movl	-12(%ebp), %eax
+	movl	%edx, 12(%eax)
+	movl	-12(%ebp), %eax
+	movl	12(%eax), %eax
+	addl	$2, %eax
+	movl	%eax, (%esp)
+	call	__ZL13yy_flex_allocj
+	movl	%eax, %edx
+	movl	-12(%ebp), %eax
+	movl	%edx, 4(%eax)
+	movl	-12(%ebp), %eax
+	movl	4(%eax), %eax
+	testl	%eax, %eax
+	jne	L146
+	movl	$LC13, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L146:
+	movl	-12(%ebp), %eax
+	movl	$1, 20(%eax)
+	movl	8(%ebp), %eax
+	movl	%eax, 4(%esp)
+	movl	-12(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__Z14yy_init_bufferP15yy_buffer_stateP6_iobuf
+	movl	-12(%ebp), %eax
+	leave
+	ret
+	.globl	__Z16yy_delete_bufferP15yy_buffer_state
+	.def	__Z16yy_delete_bufferP15yy_buffer_state;	.scl	2;	.type	32;	.endef
+__Z16yy_delete_bufferP15yy_buffer_state:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	cmpl	$0, 8(%ebp)
+	je	L153
+	movl	__ZL17yy_current_buffer, %eax
+	cmpl	%eax, 8(%ebp)
+	jne	L151
+	movl	$0, __ZL17yy_current_buffer
+L151:
+	movl	8(%ebp), %eax
+	movl	20(%eax), %eax
+	testl	%eax, %eax
+	je	L152
+	movl	8(%ebp), %eax
+	movl	4(%eax), %eax
+	movl	%eax, (%esp)
+	call	__ZL12yy_flex_freePv
+L152:
+	movl	8(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__ZL12yy_flex_freePv
+	jmp	L148
+L153:
+	nop
+L148:
+	leave
+	ret
+	.globl	__Z14yy_init_bufferP15yy_buffer_stateP6_iobuf
+	.def	__Z14yy_init_bufferP15yy_buffer_stateP6_iobuf;	.scl	2;	.type	32;	.endef
+__Z14yy_init_bufferP15yy_buffer_stateP6_iobuf:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	movl	8(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__Z15yy_flush_bufferP15yy_buffer_state
+	movl	8(%ebp), %eax
+	movl	12(%ebp), %edx
+	movl	%edx, (%eax)
+	movl	8(%ebp), %eax
+	movl	$1, 32(%eax)
+	cmpl	$0, 12(%ebp)
+	je	L155
+	movl	12(%ebp), %eax
+	movl	16(%eax), %eax
+	movl	%eax, (%esp)
+	call	_isatty
+	testl	%eax, %eax
+	jle	L155
+	movl	$1, %edx
+	jmp	L156
+L155:
+	movl	$0, %edx
+L156:
+	movl	8(%ebp), %eax
+	movl	%edx, 24(%eax)
+	nop
+	leave
+	ret
+	.globl	__Z15yy_flush_bufferP15yy_buffer_state
+	.def	__Z15yy_flush_bufferP15yy_buffer_state;	.scl	2;	.type	32;	.endef
+__Z15yy_flush_bufferP15yy_buffer_state:
+	pushl	%ebp
+	movl	%esp, %ebp
+	cmpl	$0, 8(%ebp)
+	je	L160
+	movl	8(%ebp), %eax
+	movl	$0, 16(%eax)
+	movl	8(%ebp), %eax
+	movl	4(%eax), %eax
+	movb	$0, (%eax)
+	movl	8(%ebp), %eax
+	movl	4(%eax), %eax
+	addl	$1, %eax
+	movb	$0, (%eax)
+	movl	8(%ebp), %eax
+	movl	4(%eax), %edx
+	movl	8(%ebp), %eax
+	movl	%edx, 8(%eax)
+	movl	8(%ebp), %eax
+	movl	$1, 28(%eax)
+	movl	8(%ebp), %eax
+	movl	$0, 36(%eax)
+	movl	__ZL17yy_current_buffer, %eax
+	cmpl	%eax, 8(%ebp)
+	jne	L157
+	call	__Z20yy_load_buffer_statev
+	jmp	L157
+L160:
+	nop
+L157:
+	popl	%ebp
+	ret
+	.section .rdata,"dr"
+	.align 4
+LC14:
+	.ascii "out of dynamic memory in yy_scan_buffer()\0"
+	.text
+	.globl	__Z14yy_scan_bufferPcj
+	.def	__Z14yy_scan_bufferPcj;	.scl	2;	.type	32;	.endef
+__Z14yy_scan_bufferPcj:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$40, %esp
+	cmpl	$1, 12(%ebp)
+	jbe	L162
+	movl	12(%ebp), %eax
+	leal	-2(%eax), %edx
+	movl	8(%ebp), %eax
+	addl	%edx, %eax
+	movzbl	(%eax), %eax
+	testb	%al, %al
+	jne	L162
+	movl	12(%ebp), %eax
+	leal	-1(%eax), %edx
+	movl	8(%ebp), %eax
+	addl	%edx, %eax
+	movzbl	(%eax), %eax
+	testb	%al, %al
+	je	L163
+L162:
+	movl	$0, %eax
+	jmp	L164
+L163:
+	movl	$40, (%esp)
+	call	__ZL13yy_flex_allocj
+	movl	%eax, -12(%ebp)
+	cmpl	$0, -12(%ebp)
+	jne	L165
+	movl	$LC14, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L165:
+	movl	12(%ebp), %eax
+	leal	-2(%eax), %edx
+	movl	-12(%ebp), %eax
+	movl	%edx, 12(%eax)
+	movl	-12(%ebp), %eax
+	movl	8(%ebp), %edx
+	movl	%edx, 4(%eax)
+	movl	-12(%ebp), %eax
+	movl	4(%eax), %edx
+	movl	-12(%ebp), %eax
+	movl	%edx, 8(%eax)
+	movl	-12(%ebp), %eax
+	movl	$0, 20(%eax)
+	movl	-12(%ebp), %eax
+	movl	$0, (%eax)
+	movl	-12(%ebp), %eax
+	movl	12(%eax), %eax
+	movl	%eax, %edx
+	movl	-12(%ebp), %eax
+	movl	%edx, 16(%eax)
+	movl	-12(%ebp), %eax
+	movl	$0, 24(%eax)
+	movl	-12(%ebp), %eax
+	movl	$1, 28(%eax)
+	movl	-12(%ebp), %eax
+	movl	$0, 32(%eax)
+	movl	-12(%ebp), %eax
+	movl	$0, 36(%eax)
+	movl	-12(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__Z19yy_switch_to_bufferP15yy_buffer_state
+	movl	-12(%ebp), %eax
+L164:
+	leave
+	ret
+	.globl	__Z14yy_scan_stringPKc
+	.def	__Z14yy_scan_stringPKc;	.scl	2;	.type	32;	.endef
+__Z14yy_scan_stringPKc:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$40, %esp
+	movl	$0, -12(%ebp)
+L168:
+	movl	-12(%ebp), %edx
+	movl	8(%ebp), %eax
+	addl	%edx, %eax
+	movzbl	(%eax), %eax
+	testb	%al, %al
+	je	L167
+	addl	$1, -12(%ebp)
+	jmp	L168
+L167:
+	movl	-12(%ebp), %eax
+	movl	%eax, 4(%esp)
+	movl	8(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__Z13yy_scan_bytesPKci
+	leave
+	ret
+	.section .rdata,"dr"
+	.align 4
+LC15:
+	.ascii "out of dynamic memory in yy_scan_bytes()\0"
+LC16:
+	.ascii "bad buffer in yy_scan_bytes()\0"
+	.text
+	.globl	__Z13yy_scan_bytesPKci
+	.def	__Z13yy_scan_bytesPKci;	.scl	2;	.type	32;	.endef
+__Z13yy_scan_bytesPKci:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$40, %esp
+	movl	12(%ebp), %eax
+	addl	$2, %eax
+	movl	%eax, -16(%ebp)
+	movl	-16(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__ZL13yy_flex_allocj
+	movl	%eax, -20(%ebp)
+	cmpl	$0, -20(%ebp)
+	jne	L171
+	movl	$LC15, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L171:
+	movl	$0, -12(%ebp)
+L173:
+	movl	-12(%ebp), %eax
+	cmpl	12(%ebp), %eax
+	jge	L172
+	movl	-12(%ebp), %edx
+	movl	-20(%ebp), %eax
+	addl	%eax, %edx
+	movl	-12(%ebp), %ecx
+	movl	8(%ebp), %eax
+	addl	%ecx, %eax
+	movzbl	(%eax), %eax
+	movb	%al, (%edx)
+	addl	$1, -12(%ebp)
+	jmp	L173
+L172:
+	movl	12(%ebp), %edx
+	movl	-20(%ebp), %eax
+	addl	%eax, %edx
+	movl	12(%ebp), %eax
+	leal	1(%eax), %ecx
+	movl	-20(%ebp), %eax
+	addl	%ecx, %eax
+	movb	$0, (%eax)
+	movzbl	(%eax), %eax
+	movb	%al, (%edx)
+	movl	-16(%ebp), %eax
+	movl	%eax, 4(%esp)
+	movl	-20(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__Z14yy_scan_bufferPcj
+	movl	%eax, -24(%ebp)
+	cmpl	$0, -24(%ebp)
+	jne	L174
+	movl	$LC16, (%esp)
+	call	__ZL14yy_fatal_errorPKc
+L174:
+	movl	-24(%ebp), %eax
+	movl	$1, 20(%eax)
+	movl	-24(%ebp), %eax
+	leave
+	ret
+	.section .rdata,"dr"
+LC17:
+	.ascii "%s\12\0"
+	.text
+	.def	__ZL14yy_fatal_errorPKc;	.scl	3;	.type	32;	.endef
+__ZL14yy_fatal_errorPKc:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	movl	8(%ebp), %eax
+	movl	%eax, 8(%esp)
+	movl	$LC17, 4(%esp)
+	movl	__imp___iob, %eax
+	addl	$64, %eax
+	movl	%eax, (%esp)
+	call	_fprintf
+	movl	$2, (%esp)
+	call	_exit
+	.def	__ZL13yy_flex_allocj;	.scl	3;	.type	32;	.endef
+__ZL13yy_flex_allocj:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	movl	8(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_malloc
+	leave
+	ret
+	.def	__ZL15yy_flex_reallocPvj;	.scl	3;	.type	32;	.endef
+__ZL15yy_flex_reallocPvj:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	movl	12(%ebp), %eax
+	movl	%eax, 4(%esp)
+	movl	8(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_realloc
+	leave
+	ret
+	.def	__ZL12yy_flex_freePv;	.scl	3;	.type	32;	.endef
+__ZL12yy_flex_freePv:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$24, %esp
+	movl	8(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_free
+	nop
+	leave
+	ret
+	.def	___main;	.scl	2;	.type	32;	.endef
+	.globl	_main
+	.def	_main;	.scl	2;	.type	32;	.endef
+_main:
+	pushl	%ebp
+	movl	%esp, %ebp
+	andl	$-16, %esp
+	call	___main
+	call	__Z5yylexv
+	movl	$0, %eax
+	leave
+	ret
+	.globl	_word_list
+	.bss
+	.align 4
+_word_list:
+	.space 4
+	.section .rdata,"dr"
+	.align 4
+LC18:
+	.ascii "!!! warning: word %s already defined \12\0"
+	.text
+	.globl	__Z8add_wordiPc
+	.def	__Z8add_wordiPc;	.scl	2;	.type	32;	.endef
+__Z8add_wordiPc:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$40, %esp
+	movl	12(%ebp), %eax
+	movl	%eax, (%esp)
+	call	__Z11lookup_wordPc
+	testl	%eax, %eax
+	setne	%al
+	testb	%al, %al
+	je	L185
+	movl	12(%ebp), %eax
+	movl	%eax, 4(%esp)
+	movl	$LC18, (%esp)
+	call	_printf
+	movl	$0, %eax
+	jmp	L186
+L185:
+	movl	$12, (%esp)
+	call	_malloc
+	movl	%eax, -12(%ebp)
+	movl	_word_list, %edx
+	movl	-12(%ebp), %eax
+	movl	%edx, 8(%eax)
+	movl	12(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_strlen
+	addl	$1, %eax
+	movl	%eax, (%esp)
+	call	_malloc
+	movl	%eax, %edx
+	movl	-12(%ebp), %eax
+	movl	%edx, (%eax)
+	movl	-12(%ebp), %eax
+	movl	(%eax), %eax
+	movl	12(%ebp), %edx
+	movl	%edx, 4(%esp)
+	movl	%eax, (%esp)
+	call	_strcpy
+	movl	-12(%ebp), %eax
+	movl	8(%ebp), %edx
+	movl	%edx, 4(%eax)
+	movl	-12(%ebp), %eax
+	movl	%eax, _word_list
+	movl	$1, %eax
+L186:
+	leave
+	ret
+	.globl	__Z11lookup_wordPc
+	.def	__Z11lookup_wordPc;	.scl	2;	.type	32;	.endef
+__Z11lookup_wordPc:
+	pushl	%ebp
+	movl	%esp, %ebp
+	subl	$40, %esp
+	movl	_word_list, %eax
+	movl	%eax, -12(%ebp)
+L191:
+	cmpl	$0, -12(%ebp)
+	je	L188
+	movl	-12(%ebp), %eax
+	movl	(%eax), %eax
+	movl	8(%ebp), %edx
+	movl	%edx, 4(%esp)
+	movl	%eax, (%esp)
+	call	_strcmp
+	testl	%eax, %eax
+	jne	L189
+	movl	-12(%ebp), %eax
+	movl	4(%eax), %eax
+	jmp	L190
+L189:
+	movl	-12(%ebp), %eax
+	movl	8(%eax), %eax
+	movl	%eax, -12(%ebp)
+	jmp	L191
+L188:
+	movl	$0, %eax
+L190:
+	leave
+	ret
+	.ident	"GCC: (tdm-1) 5.1.0"
+	.def	__filbuf;	.scl	2;	.type	32;	.endef
+	.def	_printf;	.scl	2;	.type	32;	.endef
+	.def	_fwrite;	.scl	2;	.type	32;	.endef
+	.def	_yywrap;	.scl	2;	.type	32;	.endef
+	.def	_fread;	.scl	2;	.type	32;	.endef
+	.def	_isatty;	.scl	2;	.type	32;	.endef
+	.def	_fprintf;	.scl	2;	.type	32;	.endef
+	.def	_exit;	.scl	2;	.type	32;	.endef
+	.def	_malloc;	.scl	2;	.type	32;	.endef
+	.def	_realloc;	.scl	2;	.type	32;	.endef
+	.def	_free;	.scl	2;	.type	32;	.endef
+	.def	_strlen;	.scl	2;	.type	32;	.endef
+	.def	_strcpy;	.scl	2;	.type	32;	.endef
+	.def	_strcmp;	.scl	2;	.type	32;	.endef
